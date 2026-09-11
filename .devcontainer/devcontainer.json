@@ -1,0 +1,57 @@
+{
+  "name": "Java Dev Container",
+
+  // Prebuilt base image with Java + common tools (Maven, Gradle) already set up.
+  // Change "21" to "17" or "11" if your course targets a different JDK version.
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+
+  // Optional: pull in extra tooling via Dev Container Features
+  // (uncomment if you want these auto-installed too)
+  // "features": {
+  //   "ghcr.io/devcontainers/features/git:1": {}
+  // },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",   // Java Extension Pack (Language Support, Debugger, Test Runner, Maven, Project Manager)
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven",
+        "redhat.java",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "editor.formatOnSave": true,
+
+        // --- Disable AI code suggestions by default ---
+        // Note: these are workspace-level defaults, not a hard lock —
+        // a student could still re-enable them in their own user settings.
+        "github.copilot.enable": {
+          "*": false,
+          "plaintext": false,
+          "markdown": false,
+          "java": false
+        },
+        "github.copilot.editor.enableAutoCompletions": false,
+        "editor.inlineSuggest.enabled": false
+      },
+      // Extensions listed here will NOT be auto-recommended/installed,
+      // and if already present, this signals they're unwanted for this project.
+      "unwantedRecommendations": [
+        "github.copilot",
+        "github.copilot-chat",
+        "github.copilot-labs",
+        "codeium.codeium",
+        "tabnine.tabnine-vscode"
+      ]
+    }
+  },
+
+  // Runs once, after the container is created (e.g. install deps, print welcome message)
+  "postCreateCommand": "echo 'Dev container ready. Run: javac Main.java && java Main'",
+
+  // Forward a port if students' projects run a local server (adjust or remove as needed)
+  "forwardPorts": [8080]
+}
