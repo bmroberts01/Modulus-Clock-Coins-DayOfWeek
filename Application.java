@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
-    Blake Roberts
+    @author Bake Roberts
     08/27/26 
 **/
 public class Application
@@ -42,9 +42,35 @@ public class Application
         int future = (today + time) % 7;
 
         System.out.println("In " + time + " days, it will be " + future);
+        
 
+        System.out.println("Enter an 8 digit number in binary");
+        int binaryNumber = keyboard.nextInt();
 
+        int first = binaryNumber % 10 * 1;
+        binaryNumber = binaryNumber / 10;
+        /*
+        int second = binaryNumber % 10 * 2;
+        binaryNumber = binaryNumber / 10;
 
+        int third = binaryNumber % 10 * 4;
+        binaryNumber = binaryNumber / 10;
+
+        int fourth = binaryNumber % 10 * 8;
+        binaryNumber = binaryNumber / 10;
+
+        int fifth = binaryNumber % 10 * 16;
+        binaryNumber = binaryNumber / 10;
+
+        int sixth = binaryNumber % 10 * 32;
+        binaryNumber = binaryNumber / 10;
+
+        int seventh = binaryNumber % 10 * 64;
+        binaryNumber = binaryNumber / 10;
+
+        int eighth = binaryNumber % 10 * 128;
+        binaryNumber = binaryNumber / 10;
+        */
          keyboard.close();
 
     }
