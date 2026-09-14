@@ -49,7 +49,7 @@ public class Application
 
         int first = binaryNumber % 10 * 1;
         binaryNumber = binaryNumber / 10;
-        /*
+        
         int second = binaryNumber % 10 * 2;
         binaryNumber = binaryNumber / 10;
 
@@ -70,7 +70,10 @@ public class Application
 
         int eighth = binaryNumber % 10 * 128;
         binaryNumber = binaryNumber / 10;
-        */
+
+
+        System.out.println("That is " + (first + second + third + fourth + fifth + sixth + seventh + eighth) );
+
          keyboard.close();
 
     }
