@@ -12,10 +12,10 @@ public class Application
         int seconds = keyboard.nextInt();
 
         int hours = seconds / 3600;
-        seconds = seconds - (hours * 3600);
+        seconds = seconds % 3600;
 
         int minutes = seconds / 60;
-        seconds = seconds - (minutes * 60);
+        seconds = seconds % 60;
         
         System.out.println(hours + ":" + minutes + ":" + seconds);
 
@@ -24,15 +24,15 @@ public class Application
         int cents = keyboard.nextInt();
 
         int quarters = cents / 25;
-        cents = cents - (quarters * 25);
+        cents = cents % 25;
 
         int dimes = cents / 10;
-        cents = cents - (dimes * 10);
+        cents = cents % 10;
 
         int nickels = cents / 5;
-        cents = cents - (cents * 5);
+        cents = cents % 5;
 
-        System.out.println( quarters + " Quarters, " + dimes + " Dimes," + nickels + " Nickels, " + "and" + cents + " Cents");
+        System.out.println( quarters + " Quarters, " + dimes + " Dimes, " + nickels + " Nickels, " + "and " + cents + " Pennies");
 
 
          keyboard.close();
